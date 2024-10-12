@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3f931973574857.5c0e75feb6f2d.jpg" type="image/jpeg">
+    <title>BB | About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            width: 30%;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+            max-width: 200px;
+        }
+
+        .team-member h3 {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .team-member p {
+            color: #777;
+        }
+
+        .our-logo {
+            border-radius: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="about-section">
+            <img class="our-logo" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3f931973574857.5c0e75feb6f2d.jpg", width="200px", height="200px">
+            <p>
+                Welcome to BB Burgers! We are passionate about crafting the juiciest, tastiest burgers in town. 
+                Our team believes in using the freshest ingredients, locally sourced to create mouth-watering 
+                meals that bring our customers back for more. Whether you're a fan of classic beef burgers or 
+                looking to try something new, we have something for everyone.
+            </p>
+            <p>
+                Our journey started in 2020 with a simple idea: to offer a burger experience like no other. 
+                Since then, we have grown into one of the city's favorite spots for burger lovers. We pride 
+                ourselves not only on our food but also on our friendly, welcoming atmosphere.
+            </p>
+        </div>
+
+        <h2>Meet Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <h3>John Doe</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <h3>Jane Smith</h3>
+                <p>Head Chef</p>
+            </div>
+            <div class="team-member">
+                <h3>Mike Johnson</h3>
+                <p>Operations Manager</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

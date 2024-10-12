@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB | Market</title>
+    <link rel="icon" href="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3f931973574857.5c0e75feb6f2d.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Include fonts -->
+    <style>
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1b1b1b; /* Darker background for contrast */
+            color: white;
+            padding: 0;
+            line-height: 1.6;  
+        }
+
+        .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: orange;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            margin-top: 100px; /* Adding space for the fixed navbar */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .image-container {
+            max-width: 300px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s, box-shadow 0.4s;
+            text-align: center;
+        }
+
+        .image-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-info h3 {
+            font-family: 'Lobster', cursive;
+            margin: 15px 0 10px;
+            color: orange;
+        }
+
+        .image-info p {
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        /* Add and Remove Buttons */
+        .add-basket-button,
+        .remove-basket-button {
+            display: inline-block;
+            background-color: orange;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-basket-button:hover {
+            background-color: darkorange;
+        }
+
+        .remove-basket-button {
+            background-color: red;
+        }
+
+        .remove-basket-button:hover {
+            background-color: darkred;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar .menu a {
+                font-size: 16px;
+                margin-left: 15px;
+            }
+
+            .image-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="image-gallery">
+        {% for data in data %}
+        <div class="image-container">
+                <img src="{{ data.image }}" alt="{{ data.title }}">
+                <div class="image-info">
+                    <h3>{{ data.title }}</h3>
+                    <p>{{ data.description }}</p>
+                </div>
+                <a href="{% url 'burger_detail' data.pk %}" class="add-basket-button">Add Basket</a>
+
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
